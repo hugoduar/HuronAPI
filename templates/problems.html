@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Codeforces problems</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/tailwind.css') }}">
+	</head>
+	<body>
+    <div class="container mx-auto">
+    <p class="text-4xl">Solved {{ problems|length }}</p>
+    <table class="table-auto border">
+      <thead>
+        <tr class="border">
+          <th class="border">Contest</th>
+          <th class="border">Problem ID</th>
+          <th class="border">Name</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for problem in problems %}
+        <tr class="border">
+          {% for data in problem %}
+            <td class="border">{{ data }}</td>
+          {% endfor %}
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    </div>
+	</body>
+</html>
